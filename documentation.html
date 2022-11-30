@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation</title>
+
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas:
+            "sidenav header"
+            "sidenav main"
+            "sidenav footer";
+    height: 101vh;
+}
+
+.header {
+    grid-area: header;
+    background-color: #D8DCE1;
+    box-shadow: 8px 8px 8px 8px #e00000, 8px 8px 8px 8px rgb(94, 45, 255);
+
+}
+
+.side-nav {
+    grid-area: sidenav;
+    background-color: #D8DCE1;
+    padding: 100px 10px;
+    color: #FCFBF8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #D8DCE1;
+}
+
+.header, .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #aaaaaa;
+    margin-right: 20px;
+    height: 520px;
+}
+
+.pagebutton {
+	background-color: rgba(0, 42, 255);
+	color: white;
+	font-family: 'Arial';
+	font-size: 16px;
+	padding: 6px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+	<div class="grid-container">
+		<div class="side-nav">
+			<form>
+				<input class="pagebutton" type="button" value="Visual"
+				onclick="window.location.href='index.html'" />
+			</form>
+		</div>
+	<div>
+    <div class="header">
+        <h1>Cholera Outbreak: London, 1854</h1>
+    </div>
+    <br/><br/>
+    <div class="main">
+        <div class="video">
+            <div class="card">
+                <h1>Walk Through</h1>
+                <iframe width="800" height="3515" src="https://www.youtube.com/embed/1ck5yGTR6m8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="">
+            <div class="">
+                <h1>Background</h1>
+                <p>Dr. John Snow created an incredible visual to help find the cause of the Chlorea outbreak in London in 1854. He showed the importance of a good visualization to uncover stories data is trying to tell.</p>
+                <p>Now, in 2022, technology has advanced immensely. We can now create better visuals with interactive elements to better tell the story the data is telling and find new findings.</p>
+                <p>This is why I created a visual using D3 to help find those harder-to-find stories through a creative, interactive visual.</p>
+                <p>I began thinking of the important aspects of the data. We have age, gender, death date, and location of the death. These can be compared to the location of the pumps. In John Snow’s visual, he showed the deaths in relation to the pumps. He did not have any way to signify age, gender, or death date. Therefore, I can use those variables to tell more of a story.</p>
+                <h1>Exploratory Questions</h1>
+                <li>Does age matter?</li>
+                <li>Does gender matter?</li>
+                <li>Is there a spike in deaths like a typical outbreak?</li>
+                <li>How does the distribution of deaths change with the date?</li>
+                <p></p>
+                <h1>Design</h1>
+                <h2>Design #1</h2>
+                <img src="Idea1.jpg" height="400"/>
+                <p>First layout: The first layout would be a visual where everything was interactive. All visuals would change depending on where the mouse hovered. This seemed to be more complicated to build and more complicated to understand as a user. Therefore, I moved on to the second idea.</p>
+                <p></p>
+                <h2>Design #2</h2>
+                <img src="Idea2.jpg" height="400"/>
+                <p>Second layout: The second layout would be a simplified version with tool tips to show the number of deaths. This allowed for less complexity to the visual.</p>
+
+                <h2>Color</h2>
+                <p>This layout had some elements mixed together to make a simpler version for the eye to follow. </p>
+
+                <h2>Layout</h2>
+                <p>I wanted each graph to show a different story. Therefore, at the top I wanted a visual to show my questions pertaining to age and gender.</p>
+                <p>In the lower half, I wanted a visual where it would show the timeline of deaths. However, I thought it would be great if that timeline interacted with the map and only showed the deaths before the date you wanted. This led to me using a feature where the user would hover the mouse and only show deaths before the date hovered over.</p>
+                <p>Next, this line graph would be able to show the same visual but split by age and gender to answer the rest of my questions. </p>
+                <h1>Discovery</h1>
+                <li>Does age matter?</li>
+                <p>Younger and older people were affected by deaths. Middle-aged individuals were not as affected. </p>
+                <li>Does gender matter?</li>
+                <p>Chlorea did not affect one gender more than the other.</p>
+                <li>Is there a spike in deaths like a typical outbreak?</li>
+                <p>In general, there was not a direct relationship between age and gender.</p>
+                <li>How does the distribution of deaths change with the date?</li>
+                <p>The outbreak was typical with death numbers from other outbreaks. It follows a normal (ish) shaped curve that starts slow, has a large spike, and dies off slowly. </p>
+                <li>How does the distribution of deaths change with the date?</li>
+                <p>The date does seem to have some correlation with the number of deaths. This could be because the outbreak started slow but spread wuicker as more people got it.</p>
+                
+            <div class="">
+                <li>Grid System: https://www.w3schools.com/css/css_grid.asp</li>
+                <li>Scatter Plot: https://d3-graph-gallery.com/graph/scatter_basic.html </li>
+                <li>Bar Chart: https://d3-graph-gallery.com/barplot</li>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; Andrew Marion 2022</p>
+        <p>FA22-IN-INFO-H517</p>
+    </div>
+</div>
+
+</body>
+</html>
